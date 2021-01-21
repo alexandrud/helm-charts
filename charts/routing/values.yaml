@@ -38,6 +38,9 @@ securityContext: {}
 
 env: {}
 
+containerPort: 3001
+healthCheck: ""
+
 service:
   type: ClusterIP
   port: 80
