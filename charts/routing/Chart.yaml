@@ -1,0 +1,11 @@
+apiVersion: v2
+name: routing
+description: Helm chart for routing app
+type: application
+version: 0.1.0
+appVersion: "1.11.1"
+keywords:
+- routing
+maintainers:
+- name: Ioan Damian
+  email: ioan@tranzy.ai
