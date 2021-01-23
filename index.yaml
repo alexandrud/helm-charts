@@ -34,6 +34,21 @@ entries:
   routing:
   - apiVersion: v2
     appVersion: 1.11.1
+    created: "2021-01-23T11:09:14.020994856Z"
+    description: Helm chart for routing app
+    digest: d440ab93de31746b3e375cb02354c133fd4e4bb49eac7241cb76c42769448950
+    keywords:
+    - routing
+    maintainers:
+    - email: ioan@tranzy.ai
+      name: Ioan Damian
+    name: routing
+    type: application
+    urls:
+    - https://github.com/alexandrud/helm-charts/releases/download/routing-0.0.4/routing-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 1.11.1
     created: "2021-01-21T22:30:10.632641494Z"
     description: Helm chart for routing app
     digest: 56b4c670ce2551a988c003b46d951bcff80502cd1fff6ccc73416f6457c425fe
