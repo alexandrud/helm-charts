@@ -3,6 +3,21 @@ entries:
   mobile-api:
   - apiVersion: v2
     appVersion: 0.0.31
+    created: "2021-01-23T12:44:29.018871394Z"
+    description: Helm chart for mobile-api app
+    digest: 2da33de4ece396d42d16e492fe4ebfa437f151a3e5ccdac056e3304d70e76f32
+    keywords:
+    - mobile-api
+    maintainers:
+    - email: ioan@tranzy.ai
+      name: Ioan Damian
+    name: mobile-api
+    type: application
+    urls:
+    - https://github.com/alexandrud/helm-charts/releases/download/mobile-api-0.0.4/mobile-api-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 0.0.31
     created: "2021-01-21T22:30:10.505682092Z"
     description: Helm chart for mobile-api app
     digest: a6dc1a8402026a28cfa3f8718a7630ac795090e7c9f27f18ca65bc9f52ab5264
