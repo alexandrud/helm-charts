@@ -40,6 +40,8 @@ env: {}
 
 containerPort: 3001
 healthCheck: ""
+healthCheckTimeout: 3
+healthCheckDelay: 10
 
 service:
   type: ClusterIP
