@@ -2,7 +2,7 @@ apiVersion: v2
 name: mobile-api
 description: Helm chart for mobile-api app
 type: application
-version: 0.0.6
+version: 0.0.7
 appVersion: "0.0.31"
 keywords:
 - mobile-api
