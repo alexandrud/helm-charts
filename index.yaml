@@ -3,6 +3,21 @@ entries:
   mobile-api:
   - apiVersion: v2
     appVersion: 0.0.31
+    created: "2021-01-23T22:17:42.951751346Z"
+    description: Helm chart for mobile-api app
+    digest: bf30ba3ba046dab4ecd66a3a490a2ee3a2a0221bfed113cfd51e6819ae3df4d1
+    keywords:
+    - mobile-api
+    maintainers:
+    - email: ioan@tranzy.ai
+      name: Ioan Damian
+    name: mobile-api
+    type: application
+    urls:
+    - https://github.com/alexandrud/helm-charts/releases/download/mobile-api-0.0.7/mobile-api-0.0.7.tgz
+    version: 0.0.7
+  - apiVersion: v2
+    appVersion: 0.0.31
     created: "2021-01-23T21:42:48.330928627Z"
     description: Helm chart for mobile-api app
     digest: 4d300dc5cd4b6f49fbca38d87ca859863db65ee12b57138ef3a5d4728fda3985
@@ -62,6 +77,21 @@ entries:
     - https://github.com/alexandrud/helm-charts/releases/download/mobile-api-0.0.2/mobile-api-0.0.2.tgz
     version: 0.0.2
   routing:
+  - apiVersion: v2
+    appVersion: 1.11.1
+    created: "2021-01-23T22:17:43.043391021Z"
+    description: Helm chart for routing app
+    digest: eaf535d9e2bfec93ad8db7d92cb9c31cefc6d2093f9bf65ed1750bde4385ac63
+    keywords:
+    - routing
+    maintainers:
+    - email: ioan@tranzy.ai
+      name: Ioan Damian
+    name: routing
+    type: application
+    urls:
+    - https://github.com/alexandrud/helm-charts/releases/download/routing-0.0.7/routing-0.0.7.tgz
+    version: 0.0.7
   - apiVersion: v2
     appVersion: 1.11.1
     created: "2021-01-23T21:42:48.405547138Z"
