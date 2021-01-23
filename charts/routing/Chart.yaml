@@ -2,7 +2,7 @@ apiVersion: v2
 name: routing
 description: Helm chart for routing app
 type: application
-version: 0.0.3
+version: 0.0.4
 appVersion: "1.11.1"
 keywords:
 - routing
