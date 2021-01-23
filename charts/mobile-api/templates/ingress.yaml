@@ -13,7 +13,7 @@ metadata:
     {{- include "mobile-api.labels" . | nindent 4 }}
   {{- with .Values.ingress.annotations }}
   annotations:
-    {{- toYaml . | nindent 4 | quote }}
+    {{- toYaml . | nindent 4 }}
   {{- end }}
 spec:
   {{- if .Values.ingress.tls }}
