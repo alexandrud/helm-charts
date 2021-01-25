@@ -6,7 +6,7 @@ metadata:
     {{- include "osrm-backend.labels" . | nindent 4 }}
 spec:
   {{- if .Values.initOsrm }}
-  replicas: "1"
+  replicas: 1
   {{- else }}
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
