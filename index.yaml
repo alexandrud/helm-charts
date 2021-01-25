@@ -79,6 +79,22 @@ entries:
   nominatim:
   - apiVersion: v2
     appVersion: "3.4"
+    created: "2021-01-25T17:20:17.951262646Z"
+    description: Helm chart for Nominatim
+    digest: e7c4dca0544cc98ab5e197154d4d43254a27d0d2927f523e96e3837eab961142
+    keywords:
+    - maps
+    - nominatim
+    maintainers:
+    - email: ioan@tranzy.ai
+      name: Ioan Damian
+    name: nominatim
+    type: application
+    urls:
+    - https://github.com/alexandrud/helm-charts/releases/download/nominatim-0.0.2/nominatim-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: "3.4"
     created: "2021-01-25T16:29:16.454978019Z"
     description: Helm chart for Nominatim
     digest: 8d1bb97ce606beca79f2ef11a19375567b5792dfbef9725bb184d60bbe5a6ab5
