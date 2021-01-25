@@ -19,7 +19,11 @@ spec:
     volumeAttributes:
 {{ toYaml . | indent 6 }}
     {{- end }}
+    {{- if .Values.initNominatim }}
     volumeHandle: {{ .Values.persistence.existingVolume.id }}
+    {{- else }}
+    volumeHandle: {{ printf "%s:%s" .Values.persistence.existingVolume.id "postgresdata" }}
+    {{- end }}
   persistentVolumeReclaimPolicy: Retain
   storageClassName: {{ .Values.persistence.storageClassName }}
 {{- end -}}

@@ -34,13 +34,19 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command:
+          {{- if .Values.initNominatim }}
+            - /bin/bash
+            - -c
+          args: 
+            - apt update && 
+              apt install wget && 
+              cd /data && 
+              wget http://download.geofabrik.de/europe/romania-latest.osm.pbf && 
+              /bin/bash /app/init.sh /data/romania-latest.osm.pbf postgresdata 3
+          {{- else }}
             - /bin/bash
             - /app/start.sh
-            # - /bin/bash
-            # - /app/init.sh
-            # - /data/romania-latest.osm.pbf
-            # - postgresdata
-            # - "3"
+          {{- end }}           
           {{- if .Values.env }}
           env:
             {{ range $k, $v := .Values.env }}
@@ -61,8 +67,12 @@ spec:
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
-            - name: maps
+            - name: postgresql
+              {{- if .Values.initNominatim }}
               mountPath: /data
+              {{- else }}
+              mountPath: /var/lib/postgresql/12/main
+              {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -76,7 +86,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       volumes:
-      - name: maps
+      - name: postgresql
       {{- if .Values.persistence.enabled }}
         persistentVolumeClaim:
           claimName: {{ template "nominatim.fullname" . }}

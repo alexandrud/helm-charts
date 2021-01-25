@@ -16,6 +16,9 @@ fullnameOverride: ""
 
 containerPort: 8080
 
+# Set to true if you want to initialize the nominatim PSQL files
+initNominatim: false
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
