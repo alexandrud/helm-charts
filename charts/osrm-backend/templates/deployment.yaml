@@ -33,20 +33,39 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          command:
+            - osrm-routed
+            - --algorithm
+            - mld
+            {{- if .Values.mapName }}
+            - /data/{{ .Values.mapName }}
+            {{- else }}
+            - /data/romania-latest.osrm
+            {{- end }}
+          {{- if .Values.env }}
+          env:
+            {{ range $k, $v := .Values.env }}
+            - name: {{ $k | quote }}
+              value: {{ $v | quote }}
+            {{- end }}
+          {{- end }}
           ports:
             - name: http
-              containerPort: 80
+              containerPort: {{ .Values.containerPort }}
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /
+              path: {{ .Values.healthCheckPath }}
               port: http
           readinessProbe:
             httpGet:
-              path: /
+              path: {{ .Values.healthCheckPath }}
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: maps
+              mountPath: /data
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
@@ -58,4 +77,12 @@ spec:
       {{- with .Values.tolerations }}
       tolerations:
         {{- toYaml . | nindent 8 }}
+      {{- end }}
+      volumes:
+      - name: maps
+      {{- if .Values.persistence.enabled }}
+        persistentVolumeClaim:
+          claimName: {{ template "osrm-backend.fullname" . }}
+      {{- else }}
+        emptyDir: {}
       {{- end }}
