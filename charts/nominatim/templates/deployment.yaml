@@ -5,8 +5,12 @@ metadata:
   labels:
     {{- include "nominatim.labels" . | nindent 4 }}
 spec:
+  {{- if .Values.initNominatim }}
+  replicas: "1"
+  {{- else }}
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
+  {{- end }}
   {{- end }}
   selector:
     matchLabels:
