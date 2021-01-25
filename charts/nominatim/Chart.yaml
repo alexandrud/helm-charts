@@ -1,0 +1,12 @@
+apiVersion: v2
+name: nominatim
+description: Helm chart for Nominatim
+type: application
+version: 0.0.1
+appVersion: "3.4"
+keywords:
+- maps
+- nominatim
+maintainers:
+- name: Ioan Damian
+  email: ioan@tranzy.ai

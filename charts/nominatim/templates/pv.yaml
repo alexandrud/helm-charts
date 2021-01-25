@@ -1,0 +1,25 @@
+{{- if .Values.persistence.existingVolume.id -}}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ template "nominatim.fullname" . }}
+  annotations:
+    pv.kubernetes.io/provisioned-by: {{ .Values.persistence.existingVolume.provisioner }}
+spec:
+  accessModes:
+    {{- range .Values.persistence.accessModes }}
+    - {{ . | quote }}
+    {{- end }}
+  capacity:
+    storage: {{ .Values.persistence.size | quote}}
+  csi:
+    driver: {{ .Values.persistence.existingVolume.driver }}
+    fsType: {{ .Values.persistence.existingVolume.type }}
+    {{- with .Values.persistence.annotations  }}
+    volumeAttributes:
+{{ toYaml . | indent 6 }}
+    {{- end }}
+    volumeHandle: {{ .Values.persistence.existingVolume.id }}
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: {{ .Values.persistence.storageClassName }}
+{{- end -}}
