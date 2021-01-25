@@ -68,12 +68,14 @@ spec:
             - name: http
               containerPort: {{ .Values.containerPort }}
               protocol: TCP
+          {{- if not .Values.initOsrm }}
           livenessProbe:
             tcpSocket:
               port: http
           readinessProbe:
             tcpSocket:
               port: http
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
