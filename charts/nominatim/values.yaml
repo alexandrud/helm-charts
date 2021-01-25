@@ -30,8 +30,8 @@ serviceAccount:
 
 podAnnotations: {}
 
-podSecurityContext: {}
-  # fsGroup: 101
+podSecurityContext:
+  fsGroup: 101
 
 securityContext:
   # capabilities:
@@ -40,7 +40,7 @@ securityContext:
   # readOnlyRootFilesystem: true
   # runAsNonRoot: true
   # runAsUser: 101
-  fsGroup: 101
+  # fsGroup: 101
   
 
 service:

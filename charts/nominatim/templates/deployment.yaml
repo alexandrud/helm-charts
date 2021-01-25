@@ -38,8 +38,8 @@ spec:
             - /bin/bash
             - -c
           args: 
-            - apt update && 
-              apt install wget && 
+            - apt-get update && 
+              apt-get -y install wget && 
               cd /data && 
               wget http://download.geofabrik.de/europe/romania-latest.osm.pbf &&
               cd $OLDPWD &&
