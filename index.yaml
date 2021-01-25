@@ -76,6 +76,23 @@ entries:
     urls:
     - https://github.com/alexandrud/helm-charts/releases/download/mobile-api-0.0.2/mobile-api-0.0.2.tgz
     version: 0.0.2
+  nominatim:
+  - apiVersion: v2
+    appVersion: "3.4"
+    created: "2021-01-25T16:29:16.454978019Z"
+    description: Helm chart for Nominatim
+    digest: 8d1bb97ce606beca79f2ef11a19375567b5792dfbef9725bb184d60bbe5a6ab5
+    keywords:
+    - maps
+    - nominatim
+    maintainers:
+    - email: ioan@tranzy.ai
+      name: Ioan Damian
+    name: nominatim
+    type: application
+    urls:
+    - https://github.com/alexandrud/helm-charts/releases/download/nominatim-0.0.1/nominatim-0.0.1.tgz
+    version: 0.0.1
   osrm-backend:
   - apiVersion: v2
     appVersion: v5.23.0
