@@ -54,12 +54,10 @@ spec:
               containerPort: {{ .Values.containerPort }}
               protocol: TCP
           livenessProbe:
-            httpGet:
-              path: {{ .Values.healthCheckPath }}
+            tcpSocket:
               port: http
           readinessProbe:
-            httpGet:
-              path: {{ .Values.healthCheckPath }}
+            tcpSocket:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
