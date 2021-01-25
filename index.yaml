@@ -79,6 +79,22 @@ entries:
   osrm-backend:
   - apiVersion: v2
     appVersion: v5.23.0
+    created: "2021-01-25T12:50:42.112083109Z"
+    description: Helm chart for Open Source Routing Machine
+    digest: c66aaeb5326ed39edfd63723bfa99f8afbd8502920381511da5a6a7e611f7357
+    keywords:
+    - maps
+    - osrm
+    maintainers:
+    - email: ioan@tranzy.ai
+      name: Ioan Damian
+    name: osrm-backend
+    type: application
+    urls:
+    - https://github.com/alexandrud/helm-charts/releases/download/osrm-backend-0.0.3/osrm-backend-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: v5.23.0
     created: "2021-01-25T10:42:06.711233052Z"
     description: Helm chart for Open Source Routing Machine
     digest: 94939e9655dcd47809dc17e94f363bc7beb906935f81f141c6d1dfa9a69f391d
