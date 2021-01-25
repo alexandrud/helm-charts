@@ -34,6 +34,20 @@ spec:
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command:
+          {{- if .Values.initNominatim }}
+           - /bin/bash
+            - -c
+          args: 
+            - apt-get update && 
+              apt-get -y install wget && 
+              cd /data && 
+              wget http://download.geofabrik.de/europe/romania-latest.osm.pbf &&
+              cd $OLDPWD &&
+              osrm-extract -p /opt/car.lua /data/romania-latest.osrm &&
+              osrm-partition /data/romania-latest.osrm &&
+              osrm-customize /data/romania-latest.osrm &&
+              rm -rf /data/romania-latest.osm.pbf
+          {{- else }}
             - osrm-routed
             - --algorithm
             - mld
@@ -42,6 +56,7 @@ spec:
             {{- else }}
             - /data/romania-latest.osrm
             {{- end }}
+          {{- end }}
           {{- if .Values.env }}
           env:
             {{ range $k, $v := .Values.env }}

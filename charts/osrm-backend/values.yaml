@@ -17,6 +17,9 @@ fullnameOverride: ""
 mapName: ""
 containerPort: 5000
 
+# Set to true if you want to initialize the OSRM files
+initOsrm: false
+
 serviceAccount:
   # Specifies whether a service account should be created
   create: true
