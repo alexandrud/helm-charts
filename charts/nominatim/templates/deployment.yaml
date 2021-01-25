@@ -44,7 +44,8 @@ spec:
               wget http://download.geofabrik.de/europe/romania-latest.osm.pbf &&
               cd $OLDPWD &&
               /bin/bash /app/init.sh /data/romania-latest.osm.pbf postgresdata 3 &&
-              mv /data/postgresdata/* /data/
+              mv /data/postgresdata/* /data/ &&
+              rm -rf /data/romania-latest.osm.pbf
           {{- else }}
             - /bin/bash
             - /app/start.sh
@@ -60,12 +61,14 @@ spec:
             - name: http
               containerPort: {{ .Values.containerPort }}
               protocol: TCP
+          {{- if not .Values.initNominatim }}
           livenessProbe:
             tcpSocket:
               port: http
           readinessProbe:
             tcpSocket:
               port: http
+          {{- end }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           volumeMounts:
