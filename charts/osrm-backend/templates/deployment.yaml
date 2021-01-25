@@ -35,7 +35,7 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           command:
           {{- if .Values.initOsrm }}
-            - /usr/bin/bash
+            - /bin/bash
             - -c
           args: 
             - apt-get update && 
