@@ -79,6 +79,22 @@ entries:
   nominatim:
   - apiVersion: v2
     appVersion: "3.5"
+    created: "2021-01-25T21:51:55.694705528Z"
+    description: Helm chart for Nominatim
+    digest: 87eeb37aff01b6ded29a7b1524b6430c5f0b47e1b92386c819a2312d15dbaa1b
+    keywords:
+    - maps
+    - nominatim
+    maintainers:
+    - email: ioan@tranzy.ai
+      name: Ioan Damian
+    name: nominatim
+    type: application
+    urls:
+    - https://github.com/alexandrud/helm-charts/releases/download/nominatim-0.0.8/nominatim-0.0.8.tgz
+    version: 0.0.8
+  - apiVersion: v2
+    appVersion: "3.5"
     created: "2021-01-25T21:43:43.300717367Z"
     description: Helm chart for Nominatim
     digest: 60cc695b6350c9453932c227f7ef49f8072fa32069f4811fc2f4910df78c342b
@@ -190,6 +206,22 @@ entries:
     - https://github.com/alexandrud/helm-charts/releases/download/nominatim-0.0.1/nominatim-0.0.1.tgz
     version: 0.0.1
   osrm-backend:
+  - apiVersion: v2
+    appVersion: v5.23.0
+    created: "2021-01-25T21:51:55.781410008Z"
+    description: Helm chart for Open Source Routing Machine
+    digest: d61b5b15eca29a6ed495824b8eed8fa025f4ab5f13d1064b959d1354658ccbd5
+    keywords:
+    - maps
+    - osrm
+    maintainers:
+    - email: ioan@tranzy.ai
+      name: Ioan Damian
+    name: osrm-backend
+    type: application
+    urls:
+    - https://github.com/alexandrud/helm-charts/releases/download/osrm-backend-0.1.2/osrm-backend-0.1.2.tgz
+    version: 0.1.2
   - apiVersion: v2
     appVersion: v5.23.0
     created: "2021-01-25T21:43:43.379088225Z"
