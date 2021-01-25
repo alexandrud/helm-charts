@@ -56,6 +56,7 @@ spec:
             {{- else }}
             - /data/romania-latest.osrm
             {{- end }}
+          {{- end }}
           {{- if .Values.env }}
           env:
             {{ range $k, $v := .Values.env }}
