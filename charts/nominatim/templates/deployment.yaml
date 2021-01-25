@@ -42,7 +42,8 @@ spec:
               apt install wget && 
               cd /data && 
               wget http://download.geofabrik.de/europe/romania-latest.osm.pbf && 
-              /bin/bash /app/init.sh /data/romania-latest.osm.pbf postgresdata 3
+              /bin/bash /app/init.sh /data/romania-latest.osm.pbf pgdata 3 &&
+              mv /data/pgdata/* /data/
           {{- else }}
             - /bin/bash
             - /app/start.sh
