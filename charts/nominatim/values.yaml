@@ -31,9 +31,9 @@ serviceAccount:
 podAnnotations: {}
 
 podSecurityContext: {}
-  # fsGroup: 2000
+  # fsGroup: 101
 
-securityContext: {}
+securityContext:
   # capabilities:
   #   drop:
   #   - ALL
